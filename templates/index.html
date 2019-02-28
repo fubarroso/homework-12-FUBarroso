@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  crossorigin="anonymous">
+  <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron">
+      <h1>MISSION TO MARS</h1>
+      <p>
+        <a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape new Mars Data</a>
+      </p>
+
+      <div class="sigline">
+        <p>
+          F. Ulises Barroso
+        </p>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Mars News</h2>
+          <h4> {{ mars.news_title }}</h4>
+          <p> {{mars.summary}} </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8 big_box">
+          <h2>This is the featured image from JPL.</h2>
+          <img src="{{mars.featured_image_url}}" alt="Mars featured image" />
+        </div>
+
+        <div class="col-md-4">
+          <div class="row weather-box">
+            <div class="col-md-12">
+              <h3>The current weather on Mars</h3>
+              <p>
+                {{mars.mars_weather}}
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <h3>Mars facts</h3>
+            {{mars.mars_table | safe }}
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="container-fluid">
+
+      <div class="jumbotron">
+        <h1>Mars Hemispheres</h1>
+      </div>
+    </div>
+  </div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+crossorigin="anonymous">
+</script>
+
+</body>
+
+</html>
